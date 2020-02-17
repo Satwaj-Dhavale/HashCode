@@ -2,7 +2,7 @@ def solution(slices, slices_per_type):
 
 
 
-M = x[0]
+M = slices
 N = len(slices_per_type)
 
 selectedIndex = []
