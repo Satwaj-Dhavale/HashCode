@@ -1,20 +1,14 @@
 
-#M = slices (S in sum of subsets)
 
 slices , type = list(map(int, input("Slices and Type:").split()))
 slices_per_type = list(map(int,input("Slices per type:").split()))
-#print(slices_per_type)
-
-sum = 0
-max_sum = 0
-
 
 selectedIndex = []
 selectedValue = []
 solIndex = []
 solValue = []
 
-size_of_problem = len(slices_per_type)
+size_of_problem = type
 start_index = size_of_problem
 
 sum = 0
@@ -26,7 +20,6 @@ while ((len(selectedIndex)>0 and selectedIndex[0] != 0) or len(selectedIndex) ==
     for i in range(start_index, -1, -1):
         current_slice = slices_per_type[i]
         temp = sum + current_slice
-        #print(temp,selectedIndex,selectedValue)
         if (temp == slices):
             sum = temp
             selectedIndex.append(i)
@@ -38,7 +31,6 @@ while ((len(selectedIndex)>0 and selectedIndex[0] != 0) or len(selectedIndex) ==
             sum = temp
             selectedIndex.append(i)
             selectedValue.append(current_slice)
-    #print("End of for")
     if (max_sum < sum):
         max_sum = sum
         solIndex = []
